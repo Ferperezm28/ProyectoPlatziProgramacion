@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--media querys-->
+    <title>CYCLOPON!</title> <!--titulo ventana-->
+
+    <!--vincular archivo js-->
+    <!--<script src="./js/cyclopon.js"></script> <!-vincular codigo js-->
+    
+
+    <!--vincular archivo css-->
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <!--<h1 class="titulo">CYCLOPON! 🩸💧💦</h1>-->
+
+    <section id="seleccionar-personaje">
+        <h1 class="titulo">Cyclopon</h1>
+
+        <h2 class="subtitulo">Elige tu arquetipo</h2>
+
+        <div id="contenedorTarjetas" class="tarjetas"> <!--dividir para css-->
+
+            <!--Sustituir el html, e inyectar desde js
+            <!- -personaje 1 - hipodoge->
+            <input type="radio" name="personaje" id="hechicera"/> <!- -seleccionar personaje- ->
+            <label class="tarjeta-personajes" for="hechicera">
+                <p>Hechicera</p> <!- -Nombre del personaje- ->
+                <img src="./assets/hechicera.png" alt="Hechicera"> <!- -imagen del personaje- ->
+            </label> <!- -Indicar personaje- ->
+            
+            
+            <!- -personaje 2 - capipepo- ->
+            <input type="radio" name="personaje" id="doncella"/>
+            <label class="tarjeta-personajes" for="doncella">
+                <p>Doncella</p>
+                <img src="./assets/doncella.png" alt="Doncella">
+            </label> 
+            
+
+            <!- -personaje 3 - ratigueya- ->
+            <input type="radio" name="personaje" id="madre"/>
+            <label class="tarjeta-personajes" for="madre">
+                <p>Madre</p>
+                <img src="./assets/madre.png" alt="Madre">
+            </label> -->
+            
+
+        </div>
+
+
+        <button id="boton-personaje">Seleccionar</button>
+    </section>
+
+    <!--agregar la seccion de canvas-->
+    <section id="ver-mapa">
+        <h2 class="subtitulo">Recorre el mapa con tu Arquetipo</h2>
+        <canvas id="mapa"></canvas> <!--etiqueta para crear mapa-->
+        <button ontouchstart="moverArriba()" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button> <!--boton para llamar a la funcion mover-->
+        <div> <!--seccionar la posicion de los botones-->
+            <button ontouchstart="moverIzquierda()" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
+            <button ontouchstart="moverAbajo()" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
+            <button ontouchstart="moverDerecha()" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+        </div>  
+    </section>    
+
+    <section id="seleccionar-ataque">
+        <h1 class="titulo">Cyclopon</h1>
+
+        <h2 class="subtitulo">Elige tu poder:</h2>
+        
+        <div id="contendorAtaques" class="tarjetas-ataque"> <!--contenedor para botones-->
+            <!--Insertar poderes con js, funcion mostrar ataques-->
+            <!--<button id="boton-sangre" class="boton-ataque">Menstruación 🩸</button>
+            <button id="boton-moco" class="boton-ataque">Moco 💧</button>
+            <button id="boton-flujo" class="boton-ataque">Flujo 💦</button>-->
+        </div>
+
+        <!--seccion de resultados-->
+        <div id="mensajes">
+                <!--<p>Tu personaje ataco con flujo, la mascota del enemigo ataco con moco - GANASTE 🎉</p>-->
+                <!--Parrafo variable con java-->
+            <p id="resultados"> Good Luck 😎</p> <!--mensaje de resultado por combate-->
+            
+            <section id="reiniciar">
+                <button id="boton-reiniciar">Reiniciar</button>
+            </section>
+         </div> 
+            
+
+         <!--seccion de combate-->
+        <div class="combates"><!--contenedor padre-->
+
+            <div class="combate-jugador"> <!--columna del jugador-->
+                <!--<p>Tu arquetipo <span id="personaje-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>-->
+                <p id="vidas-jugador">0</p> <!--vidad-->
+                <p id="personaje-jugador"></p><!--personaje-->
+                <div id="ataques-jugador"></div><!--ataque-->
+
+            </div>
+
+            <div class="combate-enemigo"> <!--columna del enemigo-->
+                <!--<p>El arquetipo <span id="personaje-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>-->
+                <p id="vidas-enemigo">0</p>
+                <p id="personaje-enemigo"></p> <!--spanAleatorio-->
+                <div id="ataques-enemigo"></div>
+            </div>
+    
+        </div>
+
+    </section>
+
+    <!--vincular js para ver nuestra pagina -->
+    <script src="./js/cyclopon.js"></script>
+
+</body>
+</html>

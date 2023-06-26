@@ -1,0 +1,228 @@
+/*titulo*/
+/*selector tipo*/
+/*h1 {
+    color: lightcoral;
+}*/
+
+/*Selector clase*/
+/*.titulo {
+    color: lightblue;
+}*/
+
+/*Selector de id*/
+/*#titulo {
+    color: lavender;
+}*/
+
+/*tipo de fuente por import*/
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@300&display=swap');
+
+
+/*aplica a todo*/
+body {
+    
+    font-family: 'Poppins', sans-serif; /*tipo de fuente*/
+    background-color: #B46060; /*color de fondo pagina*/
+}
+
+/*seccion mascota-elemento padre*/
+#seleccionar-personaje {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*titulo*/
+.titulo {
+    color: white; /*color letras*/
+    /*width: 310px; /*ancho del titulo*/
+    /*height: 50px; /*altura de letras*/
+    /*background-color: teal; /*color de fondo*/
+    font-size: 36px; /*tamaño de fuente*/
+    font-family: 'Concert One', cursive;
+}
+
+/*subtitulo*/
+.subtitulo {
+    color: white;
+    font-size: 20px; 
+}
+
+/*estilo a las tarjetas de personajes*/
+.tarjetas { 
+    display: flex; /*modificar el sentido*/
+    gap: 10px; /*separacion en flexbox entre elementos*/
+}
+
+/*estilo tarjeta personajes*/
+.tarjeta-personajes {
+    width: 180px;
+    height: 100px;
+    background: #4D4D4D;
+    padding: 10px; /*espacio interior*/
+    box-sizing: border-box; /*para colocar el padding hacia dentro*/
+    /*margin: 10px; /*espacio entre elementos*/
+    /*border: 1px solid hotpink; /*tamaño estilo color*/
+    border-radius: 20px; /*redondera esquinas*/
+    display: flex; /*ubicar elementos en horizontal*/
+    justify-content: center;
+    align-items: center;
+    color: white; /*color del texto*/
+}
+
+/*imagen de los personajes*/
+.tarjeta-personajes img {
+    width: 80px; /*ancho de las imagenes*/
+}
+
+/*ocultar los radio selectores*/
+input {
+    display: none;
+}
+/*identificar el personaje seleccioando*/
+input:checked + label{
+    background-color: #FFBF9B;
+}
+
+/*boton seleccionar */
+#boton-personaje {
+    width: 180px;
+    height: 40px;
+    background: transparent; /*sin color*/
+    margin-top: 30px;/*margen superior*/
+    border: 2px solid white;
+    border-radius: 20px;
+    /*padding: 10px;
+    box-sizing: border-box;*/
+    color: white;
+    font-family: 'Poppins', sans-serif; /*tipo de fuente*/
+}
+
+/*hoover para el boton*/
+#boton-personaje:hover {
+    background: #FFF4E0;
+}
+
+/*seccion ataque id*/
+#seleccionar-ataque {
+    /*display: flex; /*modificado en js*/
+    flex-direction: column; /*cambiar direccion en vertical*/
+    align-items: center; /*centrar segun la orientacion*/
+}
+
+/*Reutilizar los estilos de titulo y subtitulo*/
+
+/*darle formato a los botones en conjunto*/
+.tarjetas-ataque {
+    display: flex;
+    gap: 20px;
+}
+
+/*botones de ataque clase*/
+.boton-ataque {
+    background: #4D4D4D;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent; /*color del borde*/
+    width: 80px;
+    color: white;
+    font-family: 'Poppins', sans-serif; /*colocar directamente en los botones*/
+    
+}
+
+/*hover mouse botones*/
+.boton-ataque:hover {
+    border: solid 3px #FFBF9B;
+}
+
+/*seccion de mensajes de resultado*/
+#mensajes {
+    width: 280px;
+    background: #FFBF9B;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column; /*colocar elementos en columna*/
+}
+
+/*boton de reinicio*/
+#boton-reiniciar {
+    border: none; /*sin borde en el boton*/
+    color: #4D4D4D;
+    font-family: 'Poppins', sans-serif;
+    background: transparent;
+}
+
+/*seccion de combates*/
+.combates {
+    display: grid; /*css grid para rejillas*/
+    grid-template-columns: 120px 120px; /*crear columnas*/
+    /*justify-items: center; /*centrar contenido*/
+    /*text-align: center; /*centrar texto tipo word*/
+    margin-top: 20px;
+    color: #FFF4E0;
+    gap: 20px;
+}
+
+/*etiqueta padre-hijo */
+.combate-jugador, .combate-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/*vidas de cada personaje*/
+#vidas-jugador, #vidas-enemigo {
+    font-size: 32px;
+    margin-top: 0;
+}
+
+/*seccion mapa por id*/
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*etiqueta canvas por id*/
+#mapa {
+    /*width: 75vw;*/
+    border: 2px solid white;
+}
+
+/*botones del mapa*/
+#ver-mapa button {
+    width: 80px;
+    height: 40px;
+    background: transparent; 
+    margin: 10px 0;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*diseño responsivo*/
+@media (max-width:560px) { /*media querys*/
+    /*colocar las clases nuevas para dispositivos de estos tamaños*/
+    .tarjetas, .tarjetas-ataque { /*podemos incluir clases ,*/
+        /*modificar direccion de las tarjetas*/
+        flex-direction: column; /*ya tenemos display tipo flex*/
+    }
+    
+}
+
+@media (max-width:300px) { /*mapa botones*/
+    /*colocar las clases nuevas para dispositivos de estos tamaños*/
+    #ver-mapa div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }    
+}
